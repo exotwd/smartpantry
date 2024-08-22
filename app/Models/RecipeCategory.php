@@ -20,13 +20,8 @@ class RecipeCategory extends Model
         return $this->belongsToMany(Recipe::class, 'recipe_categories', 'category_id', 'recipe_id');
     }
 
-    public function scopeName($query, $name)
+    public function scopeCategory($query, $category_id)
     {
-        return $query->where('name', $name);
-    }
-
-    public function scopeDescription($query, $description)
-    {
-        return $query->where('description', $description);
+        return $query->where('category_id', $category_id);
     }
 }

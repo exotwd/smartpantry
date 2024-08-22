@@ -23,7 +23,6 @@ return new class extends Migration
             );
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
-            $table->timestamp('deleted_at')->nullable();
             $table->softDeletes();
             $table->unique(['user_id', 'recipe_id']);
             $table->timestamps();

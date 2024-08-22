@@ -26,7 +26,6 @@ class RecipeFactory extends Factory
             'servings' => $this->faker->numberBetween(1, 10),
             'instructions' => $this->faker->text(),
             'calories' => $this->faker->numberBetween(100, 1000),
-
         ];
     }
 }

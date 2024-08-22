@@ -11,8 +11,11 @@ class Produce extends Model
 
     protected $fillable = [
         'name',
+        'description',
         'image',
         'produce_category_id',
+        'expires_in_days',
+
     ];
 
     public function category()

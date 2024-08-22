@@ -12,11 +12,35 @@ import Welcome from '@/Components/Welcome.vue';
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
+            <!--2 by 2 grid-->
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 border
+                        border-gray-200 dark:border-gray-700">
+                        Recipes you may like
+                    </div>
+
+                </div>
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 border
+                        border-gray-200 dark:border-gray-700">
+                        Items close to expiry
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 border
+                        border-gray-200 dark:border-gray-700">
+                        Trending recipes
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 border
+                        border-gray-200 dark:border-gray-700">
+                        Items that are low in stock
+                    </div>
                 </div>
             </div>
+
         </div>
     </AppLayout>
 </template>
