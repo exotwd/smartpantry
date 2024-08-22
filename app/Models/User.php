@@ -62,4 +62,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function produce()
+    {
+        return $this->hasMany(Produce::class);
+    }
 }

@@ -8,4 +8,36 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'image',
+        'user_id',
+        'prep_time',
+        'cook_time',
+        'servings',
+        'instructions',
+        'calories',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Produce::class, 'recipe_ingredients', 'recipe_id', 'produce_id')->withPivot('quantity');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(RecipeCategory::class, 'recipe_categories', 'recipe_id', 'category_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
