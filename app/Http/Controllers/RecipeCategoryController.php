@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produce;
+use App\Models\RecipeCategory;
 use Illuminate\Http\Request;
 
-class ProduceController extends Controller
+class RecipeCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,12 +34,15 @@ class ProduceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Produce $produce) {}
+    public function show(RecipeCategory $recipeCategory)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Produce $produce)
+    public function edit(RecipeCategory $recipeCategory)
     {
         //
     }
@@ -47,7 +50,7 @@ class ProduceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Produce $produce)
+    public function update(Request $request, RecipeCategory $recipeCategory)
     {
         //
     }
@@ -55,7 +58,7 @@ class ProduceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Produce $produce)
+    public function destroy(RecipeCategory $recipeCategory)
     {
         //
     }

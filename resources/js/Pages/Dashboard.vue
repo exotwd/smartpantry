@@ -1,7 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
 import HorizontalCarousel from '@/Components/HorizontalCarousel.vue';
+
+import { defineProps } from 'vue';
+
+
+
+
 </script>
 
 <template>
