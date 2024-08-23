@@ -3,7 +3,13 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
 import HorizontalCarousel from '@/Components/HorizontalCarousel.vue';
 
-import { defineProps } from 'vue';
+
+//get the items from the backend
+defineProps({
+    produces: Array,
+    nearToExpiry: Array,
+});
+
 
 
 
@@ -31,7 +37,7 @@ import { defineProps } from 'vue';
                     <div class="p-6 border
                         border-gray-200 dark:border-gray-700">
                         Items close to expiry
-                        <HorizontalCarousel :items="['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']" />
+                        <HorizontalCarousel :items="nearToExpiry" />
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

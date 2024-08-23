@@ -41,6 +41,12 @@ class StoredProduce extends Model
         return $query->where('expires_at', '<', now());
     }
 
+    public function scopeCloseToExpiration($query)
+    {
+        return $query->where('expires_at', '>=', now())
+            ->where('expires_at', '<=', now()->addDays(2));
+    }
+
     public function scopeNotExpired($query)
     {
         return $query->where('expires_at', '>=', now());
