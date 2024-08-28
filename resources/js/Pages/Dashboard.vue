@@ -8,6 +8,8 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 defineProps({
     produces: Array,
     nearToExpiry: Array,
+    produce: any,
+    quantity: Number,
 
 });
 
@@ -66,19 +68,17 @@ const form = useForm({
         <!--add items to pantry of the user-->
         <div>
             <form @submit.prevent="form.post(route('pantry.store'))">
-                <div>
+                <div class="mt-4 bg-black text-white">
                     <InputLabel for="produce" value="Produce" />
                     <select id="produce" v-model="form.produce" class="mt-1 block
                         w-full">
-                        <div v-for="(item, index) in produces" :key="index">
-                            <option>{{ item }}</option>
+                        <div v-for="produce in produces" :key="index">
+                            <option value="{{ produce.id }}">{{ produce.name }}</option>
                         </div>
                     </select>
 
                     <InputLabel for="quantity" value="Quantity" />
                     <input id="quantity" type="number" v-model="form.quantity" class="mt-1 block w-full" />
-
-
                 </div>
             </form>
 
