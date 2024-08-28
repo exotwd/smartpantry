@@ -17,6 +17,8 @@
             class="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
             &rarr;
         </button>
+
+
     </div>
 </template>
 

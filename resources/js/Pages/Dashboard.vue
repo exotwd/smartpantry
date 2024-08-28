@@ -2,12 +2,19 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
 import HorizontalCarousel from '@/Components/HorizontalCarousel.vue';
-
+import { Head, Link, useForm } from '@inertiajs/vue3';
 
 //get the items from the backend
 defineProps({
     produces: Array,
     nearToExpiry: Array,
+
+});
+
+
+const form = useForm({
+    produce: '',
+    quantity: '',
 });
 
 
@@ -55,5 +62,29 @@ defineProps({
             </div>
 
         </div>
+
+        <!--add items to pantry of the user-->
+        <div>
+            <form @submit.prevent="form.post(route('pantry.store'))">
+                <div>
+                    <InputLabel for="produce" value="Produce" />
+                    <select id="produce" v-model="form.produce" class="mt-1 block
+                        w-full">
+                        <div v-for="(item, index) in produces" :key="index">
+                            <option>{{ item }}</option>
+                        </div>
+                    </select>
+
+                    <InputLabel for="quantity" value="Quantity" />
+                    <input id="quantity" type="number" v-model="form.quantity" class="mt-1 block w-full" />
+
+
+                </div>
+            </form>
+
+        </div>
+
+
+
     </AppLayout>
 </template>

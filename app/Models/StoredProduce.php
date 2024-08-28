@@ -24,6 +24,13 @@ class StoredProduce extends Model
         'expires_at_opened',
     ];
 
+    //casts
+
+    protected $casts = [
+        'expires_at' => 'datetime',
+        'expires_at_opened' => 'datetime',
+    ];
+
     //relationships
     public function produce()
     {

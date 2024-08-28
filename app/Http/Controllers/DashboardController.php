@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produce;
 use App\Models\StoredProduce;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -14,7 +15,7 @@ class DashboardController extends Controller
     public function index()
     {
         return Inertia::render('Dashboard', [
-            'produces' => StoredProduce::notExpired()->where('user_id', Auth::id())->get(),
+            'produces' => Produce::all(),
             'nearToExpiry' => StoredProduce::closeToExpiration()->where('user_id', Auth::id())->get(),
         ]);
     }
