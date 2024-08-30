@@ -11,7 +11,8 @@
             <h2>{{ storedProduce.produce.name }}</h2>
             <p>{{ storedProduce.produce.description }}</p>
             <p>Quantity: {{ storedProduce.quantity }}</p>
-            <p>Expires at: {{ storedProduce.expires_at }}</p>
+            <p>Expires at: {{ new Date(storedProduce.expires_at).toLocaleString() }}</p>
+            <p>Expires in: {{ dayjs(storedProduce.expires_at).fromNow() }}</p>
         </div>
 
 
@@ -21,6 +22,10 @@
 
 <script setup lang="ts">
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
 
 
 defineProps<{
