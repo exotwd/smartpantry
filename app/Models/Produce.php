@@ -18,11 +18,6 @@ class Produce extends Model
 
     ];
 
-    public function getExpirationDate()
-    {
-        return $this->expires_in_days;
-    }
-
     public function category()
     {
         return $this->belongsTo(ProduceCategory::class, 'produce_category_id');
