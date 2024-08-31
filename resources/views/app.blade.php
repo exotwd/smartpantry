@@ -17,5 +17,6 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
     </body>
 </html>

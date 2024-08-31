@@ -32,4 +32,9 @@ class Produce extends Model
     {
         return $query->where('produce_category_id', $category_id);
     }
+
+    public function storedProduce()
+    {
+        return $this->hasMany(StoredProduce::class);
+    }
 }

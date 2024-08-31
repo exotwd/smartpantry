@@ -24,6 +24,13 @@ class StoredProduce extends Model
         'expires_at_opened',
     ];
 
+    //casts
+
+    protected $casts = [
+        'expires_at' => 'datetime',
+        'expires_at_opened' => 'datetime',
+    ];
+
     //relationships
     public function produce()
     {
@@ -39,6 +46,12 @@ class StoredProduce extends Model
     public function scopeExpired($query)
     {
         return $query->where('expires_at', '<', now());
+    }
+
+    public function scopeCloseToExpiration($query)
+    {
+        return $query->where('expires_at', '>=', now())
+            ->where('expires_at', '<=', now()->addDays(2));
     }
 
     public function scopeNotExpired($query)

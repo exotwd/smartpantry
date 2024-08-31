@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('produce_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
-            $table->date('expires_at');
+            $table->date('expires_at')->nullable();
             $table->date('expires_at_opened')->nullable();
             $table->timestamps();
         });
