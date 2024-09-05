@@ -16,7 +16,7 @@ class DashboardController extends Controller
     {
         return Inertia::render('Dashboard', [
             'produces' => Produce::all(),
-            'nearToExpiry' => StoredProduce::closeToExpiration()->where('user_id', Auth::id())->get(),
+            'nearToExpiry' => StoredProduce::with('produce')->closeToExpiration()->where('user_id', Auth::id())->get(),
         ]);
     }
 

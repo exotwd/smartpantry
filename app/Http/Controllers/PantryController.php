@@ -21,7 +21,16 @@ class PantryController extends Controller
         ]);
     }
 
-    public function show($id) {}
+    public function show(Request $request, $id)
+    {
+
+        $produce[] = Produce::find($id);
+
+        return Inertia::render('Pantry/Show', [
+            'produce' => $produce,
+        ]);
+
+    }
 
     public function store(Request $request)
     {
